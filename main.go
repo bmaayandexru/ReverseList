@@ -7,10 +7,6 @@ type Node struct {
 	Next  *Node
 }
 
-var (
-	Head *Node
-)
-
 func AddElemsToList(s []int) *Node {
 	var (
 		pprev *Node = nil
@@ -30,6 +26,9 @@ func ReversList(h *Node) *Node {
 		hp *Node = nil
 		hn *Node = nil
 	)
+	if h == nil {
+		return h
+	}
 	for h.Next != nil {
 		hn = h.Next
 		h.Next = hp
@@ -50,10 +49,10 @@ func PrintList(h *Node) {
 }
 
 func main() {
-	// var p *Node
-	s := []int{1, 2, 3, 4, 5}
+	//	s := []int{1, 2, 3, 4, 5}
+	s := []int{1, 2, 3}
 	fmt.Println(s)
-	Head = AddElemsToList(s)
+	Head := AddElemsToList(s)
 	PrintList(Head)
 	Head = ReversList(Head)
 	PrintList(Head)
