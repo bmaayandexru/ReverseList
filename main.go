@@ -8,8 +8,7 @@ type Node struct {
 }
 
 var (
-	Head    *Node
-	Current *Node
+	Head *Node
 )
 
 func AddElemsToList(s []int) *Node {
@@ -42,7 +41,7 @@ func ReversList(h *Node) *Node {
 }
 
 func PrintList(h *Node) {
-	c := Head
+	c := h
 	fmt.Println("List:")
 	for c != nil {
 		fmt.Println(c)
